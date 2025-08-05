@@ -312,36 +312,6 @@
             categoryCardsContainer.innerHTML = '';
             // Reset grid to default
             categoryCardsContainer.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-8';
-
-            // Add the new "Talent & HR Management" category card
-            const hrCategoryCard = document.createElement('div');
-            hrCategoryCard.className = 'prompt-block flex flex-col';
-            hrCategoryCard.innerHTML = `
-                <div class="p-6">
-                    <h2 class="text-xl font-bold text-center main-heading">Gemini Prompts for <span class="accent-text">Talent & HR Management</span></h2>
-                    <p class="text-center text-gray-600 text-sm mb-4">(For recruiters, hiring managers, and HR professionals)</p>
-                </div>
-                <div class="flex-grow px-6 category-card-list scrollable-list overflow-y-auto">
-                    <ul>
-                        <li><a href="#" class="block py-1.5 text-gray-500" data-category="Talent & HR Management" data-subcategory="Recruitment">→ Recruitment</a></li>
-                        <li><a href="#" class="block py-1.5 text-gray-500" data-category="Talent & HR Management" data-subcategory="AI-Powered Recruitment">→ AI-Powered Recruitment</a></li>
-                        <li><a href="#" class="block py-1.5 text-gray-500" data-category="Talent & HR Management" data-subcategory="Candidate Engagement">→ Candidate Engagement</a></li>
-                        <li><a href="#" class="block py-1.5 text-gray-500" data-category="Talent & HR Management" data-subcategory="Sourcing Strategy">→ Sourcing Strategy</a></li>
-                        <li><a href="#" class="block py-1.5 text-gray-500" data-category="Talent & HR Management" data-subcategory="Interview Preparation">→ Interview Preparation</a></li>
-                        <li><a href="#" class="block py-1.5 text-gray-500" data-category="Talent & HR Management" data-subcategory="Performance Reviews">→ Performance Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="p-6 mt-auto">
-                    <button class="see-all-btn w-full py-2.5 rounded-md font-semibold" data-category="Talent & HR Management">See all prompts →</button>
-                </div>
-            `;
-            categoryCardsContainer.appendChild(hrCategoryCard);
-
-            // Check if 'Talent & HR Management' already exists in promptData to avoid duplication
-            // If it exists, we might need to handle merging or prioritize the hardcoded one.
-            // For now, assuming we are adding this as a distinct card regardless of prompts.json
-            // If you intend to load actual prompts for these subcategories from prompts.json,
-            // you would need to adjust the logic to integrate with the loaded data.
             for (const categoryName in promptData) {
                 const category = promptData[categoryName];
                 const subCategories = Object.keys(category);
