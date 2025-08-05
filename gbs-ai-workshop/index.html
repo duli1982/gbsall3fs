@@ -213,15 +213,14 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased pt-16"> <!-- Added pt-16 to prevent content being hidden behind fixed header -->
     <!-- Back to Hub Button -->
- <div class="fixed top-4 left-4 z-50">
- <a href="/index.html" class="back-to-hub-btn bg-[#4A90E2] text-white font-bold py-2 px-4 rounded-full text-sm shadow-lg hover:bg-blue-600 transition-colors">
+    <a href="/index.html" class="back-to-hub-btn shadow-md hover:bg-blue-600 transition-colors">
             &larr; Back To Hub
- </a>
- </div>
-<body class="antialiased">
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    </a>
+
+    <!-- Header (Nav) -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
