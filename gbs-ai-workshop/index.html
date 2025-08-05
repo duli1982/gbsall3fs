@@ -213,11 +213,7 @@
         }
     </style>
 </head>
-<body class="antialiased pt-16"> <!-- Added pt-16 to prevent content being hidden behind fixed header -->
-    <!-- Back to Hub Button -->
-    <a href="/index.html" class="back-to-hub-btn shadow-md hover:bg-blue-600 transition-colors">
-            &larr; Back To Hub
-    </a>
+<body class="antialiased pt-16">
 
     <!-- Header (Nav) -->
     <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
@@ -226,6 +222,11 @@
                 <div class="flex items-center">
                     <span class="text-xl font-bold text-[#4A90E2]">Randstad GBS</span>
                     <span class="ml-2 text-xl font-light text-gray-600">| Gemini for Leaders</span>
+                </div>
+                <!-- Back to Hub Button -->
+                <div class="hidden md:block">
+                    <a href="/index.html" class="back-to-hub-btn px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors">
+                            &larr; Back To Hub</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-4">
@@ -2117,7 +2118,7 @@
         // --- INITIAL LOAD ---
         document.addEventListener('DOMContentLoaded', async () => {
             await initFirebase();
-            updateSectionVisibility();
+            updateSectionVisibility(); // Call after Firebase to ensure auth state is considered if needed later
             displayPrompts('All');
         });
 
