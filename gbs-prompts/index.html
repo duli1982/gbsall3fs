@@ -115,55 +115,66 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== Quick Start / Pro Tips (append to head style block) ===== */
-.quick-start-section {
-  background: linear-gradient(135deg,#667EEA 0%,#764BA2 100%);
-  color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 16px 0;
-  position: relative;
-  overflow: hidden;
-}
-.quick-start-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,.1);
-  backdrop-filter: blur(10px);
-  z-index: 0;
-}
-.quick-start-content { position: relative; z-index: 1; }
-.quick-start-title {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #fff;
-}
-.quick-start-title::before { content: '🚀'; margin-right: 8px; font-size: 1.2rem; }
-.quick-start-steps { list-style: none; padding: 0; margin: 0 0 16px 0; counter-reset: step-counter; }
-.quick-start-steps li {
-  display:flex; align-items:flex-start; margin-bottom:10px; padding:8px 12px;
-  background: rgba(255,255,255,.15); border-radius:8px; border-left:3px solid #10B981;
-}
-.quick-start-steps li::before {
-  content: counter(step-counter); counter-increment: step-counter;
-  display:flex; align-items:center; justify-content:center; width:24px; height:24px;
-  background:#10B981; color:#fff; border-radius:50%; font-size:.75rem; font-weight:700; margin-right:12px;
-}
-.quick-start-tips h4 { font-size:.875rem; font-weight:600; margin:0 0 8px 0; color:#F3F4F6; display:flex; align-items:center; }
-.quick-start-tips h4::before { content:'💡'; margin-right:6px; }
-.quick-start-tips ul { margin:0; padding-left:20px; font-size:.875rem; opacity:.95; }
-.quick-start-tips li { margin-bottom:6px; background:none !important; padding:0 !important; border:none !important; display:list-item !important; }
-/* skin options (if you want a white card) */
-.quick-start-section.plain { background: transparent; color: #374151; border:1px solid #E5E7EB; }
-.quick-start-section.white { background: #fff; color: #111827; border:1px solid #E5E7EB; }
-/* small card for Pro Tips if used separately */
-.pro-tips-card { border-radius: 8px; padding: 16px; background: #fff; border: 1px solid #E6E9EE; box-shadow: 0 2px 6px rgba(15,23,42,0.02); }
-.pro-tips-card h3 { margin-bottom: 12px; font-weight: 600; }
+        /* ===== Quick Start / Pro Tips / Expected Output styles (appended) ===== */
+        .quick-start-section {
+          background: linear-gradient(135deg,#667EEA 0%,#764BA2 100%);
+          color: #fff;
+          padding: 20px;
+          border-radius: 12px;
+          margin: 16px 0;
+          position: relative;
+          overflow: hidden;
+        }
+        .quick-start-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,.1);
+          backdrop-filter: blur(10px);
+          z-index: 0;
+        }
+        .quick-start-content { position: relative; z-index: 1; }
+        .quick-start-title {
+          display: flex;
+          align-items: center;
+          font-size: 1rem;
+          font-weight: 700;
+          margin-bottom: 12px;
+          color: #fff;
+        }
+        .quick-start-title::before { content: '🚀'; margin-right: 8px; font-size: 1.2rem; }
+        .quick-start-steps { list-style: none; padding: 0; margin: 0 0 16px 0; counter-reset: step-counter; }
+        .quick-start-steps li {
+          display:flex; align-items:flex-start; margin-bottom:10px; padding:8px 12px;
+          background: rgba(255,255,255,.15); border-radius:8px; border-left:3px solid #10B981;
+        }
+        .quick-start-steps li::before {
+          content: counter(step-counter); counter-increment: step-counter;
+          display:flex; align-items:center; justify-content:center; width:24px; height:24px;
+          background:#10B981; color:#fff; border-radius:50%; font-size:.75rem; font-weight:700; margin-right:12px;
+        }
 
+        /* Pro Tips small styles */
+        .quick-start-tips h4 { font-size:.875rem; font-weight:600; margin:0 0 8px 0; color:#F3F4F6; display:flex; align-items:center; }
+        .quick-start-tips h4::before { content:'💡'; margin-right:6px; }
+        .quick-start-tips ul { margin:0; padding-left:20px; font-size:.875rem; opacity:.95; }
+        .quick-start-tips li { margin-bottom:6px; background:none !important; padding:0 !important; border:none !important; display:list-item !important; }
+
+        /* skins */
+        .quick-start-section.plain { background: transparent; color: #374151; border:1px solid #E5E7EB; }
+        .quick-start-section.white { background: #fff; color: #111827; border:1px solid #E5E7EB; }
+
+        /* Expected output */
+        .expected-output { background-color:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px; margin:16px 0; }
+        .expected-output .expected-output-title { font-weight:700; margin-bottom:8px; }
+
+        /* small badges used by the original sections */
+        .difficulty-badge { display:inline-flex; align-items:center; padding:4px 12px; border-radius:16px; font-size:.75rem; font-weight:600; text-transform:uppercase; margin-bottom:8px; margin-right:8px;}
+        .difficulty-beginner { background:#D1FAE5; color:#065F46; border:1px solid #A7F3D0; }
+        .difficulty-intermediate { background:#FEF3C7; color:#92400E; border:1px solid #FDE68A; }
+        .difficulty-advanced { background:#FEE2E2; color:#991B1B; border:1px solid #FECACA; }
+        .time-badge { display:inline-flex; align-items:center; padding:4px 10px; background:#F3F4F6; color:#4B5563; border-radius:12px; font-size:.75rem; margin-bottom:8px; border:1px solid #E5E7EB;}
+        .time-badge::before { content: '⏱️'; margin-right: 6px; }
     </style>
 </head>
 <body class="antialiased">
@@ -243,71 +254,22 @@
         /**
          * Flattens the prompt data into a single array for easier searching.
          */
-        // --- UTILITIES ---
-    function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
-    function highlightText(text, searchTerm) {
-      if (!searchTerm) return text;
-      const regex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
-      return text.replace(regex, '<mark class="bg-yellow-200">$1</mark>');
-    }
-
-    function createDifficultyBadge(difficulty) {
-      if (!difficulty) return '';
-      const map = {
-        beginner: { label: 'Beginner', class: 'difficulty-beginner' },
-        intermediate: { label: 'Intermediate', class: 'difficulty-intermediate' },
-        advanced: { label: 'Advanced', class: 'difficulty-advanced' },
-      };
-      const cfg = map[difficulty] || map.beginner;
-      return `<span class="difficulty-badge ${cfg.class}">${cfg.label}</span>`;
-    }
-    function createTimeBadge(estimatedTime) {
-      if (!estimatedTime) return '';
-      return `<span class="time-badge">${estimatedTime}</span>`;
-    }
-    function createQuickStartSection(quickStart) {
-      if (!quickStart || !quickStart.steps || quickStart.steps.length === 0) return '';
-      const stepsHTML = quickStart.steps.map(step => `<li>${step}</li>`).join('');
-      const tipsHTML = quickStart.tips && quickStart.tips.length
-        ? `<div class="quick-start-tips"><h4>Pro Tips</h4><ul>${quickStart.tips.map(t => `<li>${t}</li>`).join('')}</ul></div>`
-        : '';
-
-      // Choose the skin:
-      // - 'plain'  => transparent, matches page background (default)
-      // - 'white'  => solid white card
-      // If you add "skin" to your JSON (quickStart.skin), it will override this default.
-      const skin = (quickStart.skin === 'white' || quickStart.skin === 'plain') ? quickStart.skin : 'plain';
-
-      return `
-        <div class="quick-start-section ${skin}">
-          <div class="quick-start-content">
-            <div class="quick-start-title">Quick Start Guide</div>
-            <ol class="quick-start-steps">${stepsHTML}</ol>
-            ${tipsHTML}
-          </div>
-        </div>
-      `;
-    }
-    function createExpectedOutputSection(expectedOutput) {
-      if (!expectedOutput) return '';
-      return `<div class="expected-output">
-        <div class="expected-output-title">What to Expect</div>
-        <div class="expected-output-content">${expectedOutput}</div>
-      </div>`;
-    }
-
-    function flattenPrompts() {
-      allPrompts = [];
-      for (const categoryName in promptData) {
-        const category = promptData[categoryName];
-        for (const subCategoryName in category) {
-          const prompts = category[subCategoryName];
-          prompts.forEach(prompt => {
-            allPrompts.push({ ...prompt, category: categoryName, subcategory: subCategoryName });
-          });
+        function flattenPrompts() {
+            allPrompts = [];
+            for (const categoryName in promptData) {
+                const category = promptData[categoryName];
+                for (const subCategoryName in category) {
+                    const prompts = category[subCategoryName];
+                    prompts.forEach(prompt => {
+                        allPrompts.push({
+                            ...prompt,
+                            category: categoryName,
+                            subcategory: subCategoryName
+                        });
+                    });
+                }
+            }
         }
-      }
-    }
 
         async function loadPrompts() {
             const loadingIndicator = document.getElementById('loading-indicator');
@@ -348,14 +310,14 @@
                     function cycleSubtitles() {
                         // Fade out the current text
                         animatedSubtitleEl.classList.remove('subtitle-animate-in');
- animatedSubtitleEl.classList.add('subtitle-animate-out');
+                        animatedSubtitleEl.classList.add('subtitle-animate-out');
 
                         // After the fade-out is done, change the text and fade it in
                         setTimeout(() => {
                             subtitleIndex = (subtitleIndex + 1) % subtitles.length;
                             animatedSubtitleEl.textContent = subtitles[subtitleIndex];
                             animatedSubtitleEl.classList.remove('subtitle-animate-out');
- animatedSubtitleEl.classList.add('subtitle-animate-in');
+                            animatedSubtitleEl.classList.add('subtitle-animate-in');
                         }, 500); // Match the animation duration
                     }
 
@@ -393,11 +355,50 @@
         const generatedGemContainer = document.getElementById('generated-gem-container');
         const generatedGemTextarea = document.getElementById('generated-gem');
 
-        // --- RENDER FUNCTIONS ---
+        // ===== Helpers for Quick Start, Expected Output, and badges =====
+        function createDifficultyBadge(difficulty) {
+          if (!difficulty) return '';
+          const map = {
+            beginner: { label: 'Beginner', class: 'difficulty-beginner' },
+            intermediate: { label: 'Intermediate', class: 'difficulty-intermediate' },
+            advanced: { label: 'Advanced', class: 'difficulty-advanced' },
+          };
+          const cfg = map[difficulty] || map.beginner;
+          return `<span class="difficulty-badge ${cfg.class}">${cfg.label}</span>`;
+        }
 
-        /**
-         * Renders the initial homepage view with category cards.
-         */
+        function createTimeBadge(estimatedTime) {
+          if (!estimatedTime) return '';
+          return `<span class="time-badge">${estimatedTime}</span>`;
+        }
+
+        function createQuickStartSection(quickStart) {
+          if (!quickStart || !quickStart.steps || quickStart.steps.length === 0) return '';
+          const stepsHTML = quickStart.steps.map(step => `<li>${step}</li>`).join('');
+          const tipsHTML = quickStart.tips && quickStart.tips.length
+            ? `<div class="quick-start-tips"><h4>Pro Tips</h4><ul>${quickStart.tips.map(t => `<li>${t}</li>`).join('')}</ul></div>`
+            : '';
+          const skin = (quickStart.skin === 'white' || quickStart.skin === 'plain') ? quickStart.skin : 'plain';
+          return `
+            <div class="quick-start-section ${skin}">
+              <div class="quick-start-content">
+                <div class="quick-start-title">Quick Start Guide</div>
+                <ol class="quick-start-steps">${stepsHTML}</ol>
+                ${tipsHTML}
+              </div>
+            </div>
+          `;
+        }
+
+        function createExpectedOutputSection(expectedOutput) {
+          if (!expectedOutput) return '';
+          return `<div class="expected-output">
+            <div class="expected-output-title">What to Expect</div>
+            <div class="expected-output-content">${expectedOutput}</div>
+          </div>`;
+        }
+
+        // --- RENDER FUNCTIONS ---
         function renderHomepage() {
             categoryCardsContainer.innerHTML = '';
             // Reset grid to default
@@ -429,34 +430,8 @@
         }
 
         /**
-         * Switches the view to show all prompts for a category.
-         * @param {string} category - The main category to show.
-         */
-        function showAllCategoryView(category) {
-            lastScrollPosition = window.scrollY;
-            renderAllCategoryView(category);
-            homepageView.classList.add('hidden');
-            detailView.classList.remove('hidden');
-            detailView.classList.add('fade-in');
-            window.scrollTo(0, 0); // Scroll to top
-        }
-
-        /**
-         * Highlights a search term in a block of text.
-         * @param {string} text - The text to highlight.
-         * @param {string} searchTerm - The term to highlight.
-         * @returns {string} The HTML string with the term highlighted.
-         */
-        function highlightText(text, searchTerm) {
-            if (!searchTerm) {
-                return text;
-            }
-            const regex = new RegExp(`(${searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')})`, 'gi');
-            return text.replace(regex, '<mark class="bg-yellow-200">$1</mark>');
-        }
-
-        /**
          * Creates a DOM element for a single prompt.
+         * Enhanced: includes badges, Quick Start, and Expected Output sections when available.
          * @param {object} prompt - The prompt object.
          * @param {boolean} isSearchResult - True if the prompt is for a search result.
          * @param {string} searchTerm - The term to highlight in the prompt.
@@ -464,28 +439,39 @@
          */
         function createPromptElement(prompt, isSearchResult = false, searchTerm = '') {
             const promptEl = document.createElement('div');
-            const escapedContent = prompt.content.replace(/"/g, '&quot;');
+            const escapedContent = (prompt.content || '').replace(/"/g, '&quot;');
 
             const titleClass = isSearchResult ? 'text-lg' : 'text-xl';
-            const breadcrumbHTML = isSearchResult ? `
-                <p class="text-gray-500 text-sm mb-3">
- <span class="font-semibold">${prompt.category}</span> &gt; <span>${prompt.subcategory}</span>
-                </p>` : '';
-            const descriptionHTML = prompt.description ? `<p class="text-gray-600 text-sm mb-2">${prompt.description}</p>` : '';
-            const contentContainerClass = isSearchResult ? 'prompt-display-item p-4 text-gray-700 bg-gray-50 rounded-md' : 'prompt-display-item p-4 text-gray-700';
+            const breadcrumbHTML = isSearchResult
+                ? `<p class="text-gray-500 text-sm mb-3"><span class="font-semibold">${prompt.category}</span> &gt; <span>${prompt.subcategory}</span></p>`
+                : '';
 
-            const highlightedTitle = isSearchResult ? highlightText(prompt.title, searchTerm) : prompt.title;
-            // We don't highlight description on the homepage search results for simplicity,
-            // but you could add that logic here if needed.
-            const highlightedDescription = prompt.description;
-            const highlightedContent = isSearchResult ? highlightText(prompt.content, searchTerm) : prompt.content;
+            const descriptionHTML = prompt.description ? `<p class="text-gray-600 text-sm mb-3">${prompt.description}</p>` : '';
+            const contentContainerClass = isSearchResult
+                ? 'prompt-display-item p-4 text-gray-700 bg-gray-50 rounded-md'
+                : 'prompt-display-item p-4 text-gray-700';
+
+            const highlightedTitle = isSearchResult ? highlightText(prompt.title || '', searchTerm) : (prompt.title || '');
+            const highlightedContent = isSearchResult ? highlightText(prompt.content || '', searchTerm) : (prompt.content || '');
+
+            // badges + quick-start + expected output
+            const difficultyBadge = createDifficultyBadge(prompt.difficulty);
+            const timeBadge = createTimeBadge(prompt.estimatedTime);
+            const quickStartSection = createQuickStartSection(prompt.quickStart || {});
+            const expectedOutputSection = createExpectedOutputSection(prompt.expectedOutput || '');
 
             promptEl.className = isSearchResult ? 'prompt-block p-4' : 'mb-8';
 
             promptEl.innerHTML = `
-                <div class="flex justify-between items-center mb-2">
-                    <h3 class="${titleClass} font-semibold main-heading">${highlightedTitle}</h3>
-                    <div>
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex-1">
+                        <div class="badges-container mb-2">
+                          ${difficultyBadge}
+                          ${timeBadge}
+                        </div>
+                        <h3 class="${titleClass} font-semibold main-heading">${highlightedTitle}</h3>
+                    </div>
+                    <div class="flex-shrink-0 ml-4">
                         <button class="copy-btn text-sm py-1 px-3 rounded-md bg-indigo-100 text-indigo-700 hover:bg-indigo-200" data-prompt-content="${escapedContent}">
                             Copy
                         </button>
@@ -494,11 +480,16 @@
                         </button>
                     </div>
                 </div>
+
                 ${breadcrumbHTML}
- ${descriptionHTML}
+                ${descriptionHTML}
+
                 <div class="${contentContainerClass}">
                     <p>${highlightedContent}</p>
                 </div>
+
+                ${quickStartSection}
+                ${expectedOutputSection}
             `;
 
             return promptEl;
@@ -536,7 +527,6 @@
                 categoryCardsContainer.appendChild(promptEl);
             });
         }
-
 
         function renderQuickLinks(activeCategory, activeSubCategory) {
             quickLinksSidebar.innerHTML = '';
@@ -690,8 +680,8 @@
 
             clearSearchBtn.classList.remove('hidden');
             const filteredPrompts = allPrompts.filter(prompt => {
-                const titleMatch = prompt.title.toLowerCase().includes(searchTerm);
-                const contentMatch = prompt.content.toLowerCase().includes(searchTerm);
+                const titleMatch = (prompt.title || '').toLowerCase().includes(searchTerm);
+                const contentMatch = (prompt.content || '').toLowerCase().includes(searchTerm);
                 return titleMatch || contentMatch;
             });
 
