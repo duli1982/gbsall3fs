@@ -10,115 +10,103 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F7F4; /* Updated: Soft off-white background */
-            color: #4A4A4A; /* Updated: Dark gray text */
+            background-color: #F8F7F4; /* Soft off-white background */
+            color: #4A4A4A; /* Dark gray text used across the site */
         }
 
         /* --- Custom Scrollbar for lists --- */
-        .scrollable-list::-webkit-scrollbar {
-            width: 6px;
-        }
-        .scrollable-list::-webkit-scrollbar-track {
-            background: #f1f5f9;
-            border-radius: 10px;
-        }
-        .scrollable-list::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
-        .scrollable-list::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
+        .scrollable-list::-webkit-scrollbar { width: 6px; }
+        .scrollable-list::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+        .scrollable-list::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .scrollable-list::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
         /* --- General Card Style with Hover Animation --- */
-        /* Ensure Tailwind's box-shadow is applied along with the custom transition */
         .prompt-block {
             border: 1px solid #e5e7eb;
             border-radius: 0.75rem;
-            background-color: #FFFFFF; /* Updated: Pure white cards */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05); /* Updated: Softer shadow */
-            /* Added transition for transform and box-shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added: Smooth transition for hover */
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .prompt-block:hover {
-            transform: translateY(-5px); /* Added: Lift effect on hover */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Added: Deeper shadow on hover */
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.05);
         }
 
         /* --- Homepage Category Card --- */
-        .category-card-list {
-            height: 200px; /* Fixed height for scrollable area */
-        }
-        .category-card-list a:hover {
-            color: #4A90E2; /* Updated: Accent color on hover */
-        }
+        .category-card-list { height: 200px; }
+        .category-card-list a:hover { color: #4A90E2; }
         .see-all-btn {
-            border: 1px solid #4A90E2; /* Updated: Accent color for border */
-            color: #4A90E2; /* Updated: Accent color for text */
+            border: 1px solid #4A90E2;
+            color: #4A90E2;
             transition: all 0.2s ease-in-out;
         }
-        .see-all-btn:hover {
-            background-color: #4A90E2; /* Updated: Accent color for background */
-            color: white;
-        }
+        .see-all-btn:hover { background-color: #4A90E2; color: white; }
 
         /* --- Detail Page Prompt Display --- */
         .prompt-display-item {
-            border: 1px solid #e5e7eb; /* Updated: Softer border */
+            border: 1px solid #e5e7eb;
             border-radius: 0.5rem;
             background-color: #FFFFFF;
         }
 
         /* --- Quick Links Sidebar --- */
-        .quick-links-sidebar {
-            height: calc(100vh - 100px); /* Adjust height based on header */
-        }
-        .quick-links-sidebar a {
-            transition: color 0.2s ease;
-        }
-        .quick-links-sidebar a:hover, .quick-links-sidebar a.active {
-            color: #4A90E2; /* Updated: Accent color for active/hover links */
-        }
+        .quick-links-sidebar { height: calc(100vh - 100px); }
+        .quick-links-sidebar a { transition: color 0.2s ease; }
+        .quick-links-sidebar a:hover, .quick-links-sidebar a.active { color: #4A90E2; }
 
         /* --- General UI Elements --- */
-        .main-heading {
-             color: #111827; /* Keep main headings darker for emphasis */
-        }
-        .accent-text {
-            color: #4A90E2;
-        }
-        .hidden {
-            display: none;
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
+        .main-heading { color: #111827; }
+        .accent-text { color: #4A90E2; }
+        .hidden { display: none; }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        .subtitle-animate-in { opacity: 1; transform: translateY(0); transition: opacity 0.5s, transform 0.5s; }
+        .subtitle-animate-out { opacity: 0; transform: translateY(-10px); transition: opacity 0.5s, transform 0.5s; }
+        .h-8 { min-height: 2rem; }
 
-        /* --- Animated Subtitle Animations --- */
-        .subtitle-animate-in {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .subtitle-animate-out {
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .h-8 {
-            min-height: 2rem; /* Ensure the container has a minimum height */
-        }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== Quick Start / Pro Tips / Expected Output styles (appended) ===== */
+        /* Difficulty Badge Styles (site-wide; unchanged) */
+        .difficulty-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            margin-bottom: 8px;
+            margin-right: 8px;
+        }
+        .difficulty-beginner { background-color: #D1FAE5; color: #065F46; border: 1px solid #A7F3D0; }
+        .difficulty-intermediate { background-color: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+        .difficulty-advanced { background-color: #FEE2E2; color: #991B1B; border: 1px solid #FECACA; }
+        .difficulty-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+        .difficulty-beginner::before { background-color: #10B981; }
+        .difficulty-intermediate::before { background-color: #F59E0B; }
+        .difficulty-advanced::before { background-color: #EF4444; }
+
+        .time-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            background-color: #F3F4F6;
+            color: #4B5563;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+            border: 1px solid #E5E7EB;
+        }
+        .time-badge::before { content: '⏱️'; margin-right: 4px; }
+
+        /* ===== Quick Start / Pro Tips / Expected Output styles ===== */
         .quick-start-section {
           background: linear-gradient(135deg,#667EEA 0%,#764BA2 100%);
-          color: #fff;
+          color: #fff; /* default gradient skin keeps white text */
           padding: 20px;
           border-radius: 12px;
           margin: 16px 0;
@@ -140,7 +128,7 @@
           font-size: 1rem;
           font-weight: 700;
           margin-bottom: 12px;
-          color: #4A4A4A;
+          color: #fff;
         }
         .quick-start-title::before { content: '🚀'; margin-right: 8px; font-size: 1.2rem; }
         .quick-start-steps { list-style: none; padding: 0; margin: 0 0 16px 0; counter-reset: step-counter; }
@@ -151,30 +139,78 @@
         .quick-start-steps li::before {
           content: counter(step-counter); counter-increment: step-counter;
           display:flex; align-items:center; justify-content:center; width:24px; height:24px;
-          background:#10B981; color:#4A4A4A; border-radius:50%; font-size:.75rem; font-weight:700; margin-right:12px;
+          background:#10B981; color:#fff; border-radius:50%; font-size:.75rem; font-weight:700; margin-right:12px;
         }
 
-        /* Pro Tips small styles */
         .quick-start-tips h4 { font-size:.875rem; font-weight:600; margin:0 0 8px 0; color:#F3F4F6; display:flex; align-items:center; }
         .quick-start-tips h4::before { content:'💡'; margin-right:6px; }
         .quick-start-tips ul { margin:0; padding-left:20px; font-size:.875rem; opacity:.95; }
         .quick-start-tips li { margin-bottom:6px; background:none !important; padding:0 !important; border:none !important; display:list-item !important; }
 
-        /* skins */
         .quick-start-section.plain { background: transparent; color: #374151; border:1px solid #E5E7EB; }
         .quick-start-section.white { background: #fff; color: #111827; border:1px solid #E5E7EB; }
 
-        /* Expected output */
         .expected-output { background-color:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:16px; margin:16px 0; }
         .expected-output .expected-output-title { font-weight:700; margin-bottom:8px; }
 
         /* small badges used by the original sections */
         .difficulty-badge { display:inline-flex; align-items:center; padding:4px 12px; border-radius:16px; font-size:.75rem; font-weight:600; text-transform:uppercase; margin-bottom:8px; margin-right:8px;}
-        .difficulty-beginner { background:#D1FAE5; color:#065F46; border:1px solid #A7F3D0; }
-        .difficulty-intermediate { background:#FEF3C7; color:#92400E; border:1px solid #FDE68A; }
-        .difficulty-advanced { background:#FEE2E2; color:#991B1B; border:1px solid #FECACA; }
         .time-badge { display:inline-flex; align-items:center; padding:4px 10px; background:#F3F4F6; color:#4B5563; border-radius:12px; font-size:.75rem; margin-bottom:8px; border:1px solid #E5E7EB;}
         .time-badge::before { content: '⏱️'; margin-right: 6px; }
+
+        /* ===== OVERRIDES: make Quick Start & Pro Tips match site text and neutralize green accents ===== */
+
+        /* Make Quick Start title + Pro Tips heading and their content use the same text color as page body */
+        .quick-start-section.plain .quick-start-title,
+        .quick-start-section.plain .quick-start-tips h4,
+        .quick-start-section.plain,
+        .quick-start-section.plain .quick-start-steps,
+        .quick-start-section.plain .quick-start-tips,
+        .quick-start-section.plain .quick-start-steps li,
+        .quick-start-section.plain .quick-start-steps li::before,
+        .quick-start-section.white .quick-start-title,
+        .quick-start-section.white .quick-start-tips h4,
+        .quick-start-section.white,
+        .quick-start-section.white .quick-start-steps,
+        .quick-start-section.white .quick-start-tips,
+        .quick-start-section.white .quick-start-steps li,
+        .quick-start-section.white .quick-start-steps li::before {
+          color: #4A4A4A !important; /* site body color */
+        }
+
+        /* Remove the green left border on step rows (make transparent) */
+        .quick-start-section .quick-start-steps li {
+          border-left-color: transparent !important;
+          background: transparent !important;
+          box-shadow: none !important;
+        }
+
+        /* Make the numbered circle transparent (no filled green), keep the number visible */
+        .quick-start-section .quick-start-steps li::before {
+          background: transparent !important;          /* remove green fill */
+          color: #4A4A4A !important;                   /* number uses page text color */
+          border: 1px solid #E5E7EB !important;        /* soft outline so circle remains visible */
+          box-shadow: none !important;
+          font-weight: 700 !important;
+          width: 24px; height: 24px; line-height: 24px;
+          display: inline-flex; align-items: center; justify-content: center;
+        }
+
+        /* Ensure the Pro Tips emoji inherits the text color */
+        .quick-start-section .quick-start-tips h4::before {
+          color: inherit !important;
+          filter: none !important;
+        }
+
+        /* Neutralize difficulty/time badge inside quick-start area (if present) */
+        .quick-start-section .difficulty-badge,
+        .quick-start-section .time-badge {
+          background: transparent !important;
+          color: #4A4A4A !important;
+          border-color: #E5E7EB !important;
+          box-shadow: none !important;
+        }
+
     </style>
 </head>
 <body class="antialiased">
@@ -217,7 +253,6 @@
                             border-l border-gray-200 p-6 flex flex-col"
                     >
                     <h2 class="text-lg font-bold mb-4 main-heading">Quick Links</h2>
-<!-- ① Search box -->
   <input
     type="text"
     id="quick-links-search"
@@ -308,17 +343,15 @@
                     let subtitleIndex = 0;
 
                     function cycleSubtitles() {
-                        // Fade out the current text
                         animatedSubtitleEl.classList.remove('subtitle-animate-in');
                         animatedSubtitleEl.classList.add('subtitle-animate-out');
 
-                        // After the fade-out is done, change the text and fade it in
                         setTimeout(() => {
                             subtitleIndex = (subtitleIndex + 1) % subtitles.length;
                             animatedSubtitleEl.textContent = subtitles[subtitleIndex];
                             animatedSubtitleEl.classList.remove('subtitle-animate-out');
                             animatedSubtitleEl.classList.add('subtitle-animate-in');
-                        }, 500); // Match the animation duration
+                        }, 500);
                     }
 
                     // Display the first subtitle immediately and then cycle
@@ -327,7 +360,6 @@
                 }
             } catch (error) {
                 console.error('Failed to load prompts:', error);
-                // Display an error message to the user
                 categoryCardsContainer.innerHTML = `
                     <div class="text-center text-red-500">
                         <p>Error loading prompts. Please try again later.</p>
@@ -401,7 +433,6 @@
         // --- RENDER FUNCTIONS ---
         function renderHomepage() {
             categoryCardsContainer.innerHTML = '';
-            // Reset grid to default
             categoryCardsContainer.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-8';
             for (const categoryName in promptData) {
                 const category = promptData[categoryName];
@@ -519,7 +550,6 @@
                 return;
             }
 
-            // Change grid layout for search results
             categoryCardsContainer.className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-8';
 
             results.forEach(prompt => {
@@ -544,7 +574,6 @@
                     link.textContent = subCategoryName;
                     link.dataset.category = categoryName;
                     link.dataset.subcategory = subCategoryName;
-                    // Highlight the active link
                     if (categoryName === activeCategory && subCategoryName === activeSubCategory) {
                         link.className = 'active font-semibold';
                     }
@@ -561,7 +590,6 @@
          * @param {string} activeSubCategory - The sub-category to display.
          */
         function renderDetailView(activeCategory, activeSubCategory) {
-            // Render the main prompt content
             promptDisplayArea.innerHTML = '';
             const subCategoryPrompts = promptData[activeCategory][activeSubCategory];
 
@@ -576,7 +604,6 @@
                 promptDisplayArea.appendChild(promptEl);
             });
 
-            // Render the quick links sidebar
             renderQuickLinks(activeCategory, activeSubCategory);
         }
 
@@ -585,7 +612,6 @@
          * @param {string} activeCategory - The main category to display.
          */
         function renderAllCategoryView(activeCategory) {
-            // Render the main prompt content
             promptDisplayArea.innerHTML = '';
 
             const header = document.createElement('h1');
@@ -609,174 +635,88 @@
                 });
             }
 
-            // Render the quick links sidebar
-            renderQuickLinks(activeCategory, null); // No active subcategory
+            renderQuickLinks(activeCategory, null);
         }
 
         // --- NAVIGATION LOGIC ---
-
-        /**
-         * Switches the view from homepage to detail page.
-         * @param {string} category - The main category to show.
-         * @param {string} subCategory - The specific sub-category to show.
-         */
         function showDetailView(category, subCategory) {
             lastScrollPosition = window.scrollY;
             renderDetailView(category, subCategory);
             homepageView.classList.add('hidden');
             detailView.classList.remove('hidden');
             detailView.classList.add('fade-in');
-            window.scrollTo(0, 0); // Scroll to top
+            window.scrollTo(0, 0);
         }
-
-        /**
-         * Switches the view from detail page back to the homepage.
-         */
         function showHomepage() {
             detailView.classList.add('hidden');
             homepageView.classList.remove('hidden');
             homepageView.classList.add('fade-in');
-            setTimeout(() => {
-                window.scrollTo(0, lastScrollPosition);
-            }, 0);
+            setTimeout(() => { window.scrollTo(0, lastScrollPosition); }, 0);
         }
 
         function populateGemModal(content) {
-            // Simple parsing logic based on keywords.
-            // This can be improved with more advanced NLP in the future.
             const personaMatch = content.match(/act as an? (.*)/i);
             document.getElementById('gem-persona').value = personaMatch ? `You are a ${personaMatch[1]}` : '';
-
-            // For the other fields, we'll just put the whole content in the 'Task' field for now.
             document.getElementById('gem-task').value = content;
             document.getElementById('gem-context').value = '';
             document.getElementById('gem-audience').value = '';
             document.getElementById('gem-tone').value = '';
             document.getElementById('gem-format').value = '';
         }
-
-        function showGemModal(content) {
-            populateGemModal(content);
-            gemModal.classList.remove('hidden');
-        }
-
-        function hideGemModal() {
-            gemModal.classList.add('hidden');
-            generatedGemTextarea.value = '';
-            generatedGemContainer.classList.add('hidden');
-        }
+        function showGemModal(content) { populateGemModal(content); gemModal.classList.remove('hidden'); }
+        function hideGemModal() { gemModal.classList.add('hidden'); generatedGemTextarea.value = ''; generatedGemContainer.classList.add('hidden'); }
 
         // --- EVENT LISTENERS ---
-
-        // Event listener for homepage search
         homepageSearchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.trim().toLowerCase();
-
-            if (searchTerm === '') {
-                renderHomepage();
-                clearSearchBtn.classList.add('hidden');
-                return;
-            }
-
+            if (searchTerm === '') { renderHomepage(); clearSearchBtn.classList.add('hidden'); return; }
             clearSearchBtn.classList.remove('hidden');
             const filteredPrompts = allPrompts.filter(prompt => {
                 const titleMatch = (prompt.title || '').toLowerCase().includes(searchTerm);
                 const contentMatch = (prompt.content || '').toLowerCase().includes(searchTerm);
                 return titleMatch || contentMatch;
             });
-
             renderSearchResults(filteredPrompts);
         });
-
-        clearSearchBtn.addEventListener('click', () => {
-            homepageSearchInput.value = '';
-            clearSearchBtn.classList.add('hidden');
-            renderHomepage();
-        });
+        clearSearchBtn.addEventListener('click', () => { homepageSearchInput.value = ''; clearSearchBtn.classList.add('hidden'); renderHomepage(); });
 
         function handleCopyClick(e) {
             const target = e.target.closest('.copy-btn');
             if (!target) return;
-
             const content = target.dataset.promptContent;
             if (content) {
                 navigator.clipboard.writeText(content).then(() => {
                     target.textContent = 'Copied!';
                     target.classList.add('bg-green-200', 'text-green-800');
-                    setTimeout(() => {
-                        target.textContent = 'Copy';
-                        target.classList.remove('bg-green-200', 'text-green-800');
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                    target.textContent = 'Error';
-                    setTimeout(() => {
-                        target.textContent = 'Copy';
-                    }, 2000);
-                });
+                    setTimeout(() => { target.textContent = 'Copy'; target.classList.remove('bg-green-200', 'text-green-800'); }, 2000);
+                }).catch(err => { console.error('Failed to copy text: ', err); target.textContent = 'Error'; setTimeout(() => { target.textContent = 'Copy'; }, 2000); });
             }
         }
 
-
-        // Event listener for the homepage
         categoryCardsContainer.addEventListener('click', (e) => {
             const target = e.target;
-
-            if (target.id === 'clear-search-suggestions-btn') {
-                homepageSearchInput.value = '';
-                clearSearchBtn.classList.add('hidden');
-                renderHomepage();
-                return;
-            }
-
-            if (target.closest('.copy-btn')) {
-                handleCopyClick(e);
-                return;
-            }
-
-            if (target.classList.contains('create-gem-btn')) {
-                const content = target.dataset.promptContent;
-                showGemModal(content);
-                return;
-            }
-
-            // Handle "See all prompts" button click
-            if (target.classList.contains('see-all-btn')) {
-                const categoryName = target.dataset.category;
-                showAllCategoryView(categoryName);
-            }
-
-            // Handle clicking on a sub-category link
-            if (target.tagName === 'A' && target.dataset.subcategory) {
-                e.preventDefault();
-                showDetailView(target.dataset.category, target.dataset.subcategory);
-            }
+            if (target.id === 'clear-search-suggestions-btn') { homepageSearchInput.value = ''; clearSearchBtn.classList.add('hidden'); renderHomepage(); return; }
+            if (target.closest('.copy-btn')) { handleCopyClick(e); return; }
+            if (target.classList.contains('create-gem-btn')) { const content = target.dataset.promptContent; showGemModal(content); return; }
+            if (target.classList.contains('see-all-btn')) { const categoryName = target.dataset.category; showAllCategoryView(categoryName); }
+            if (target.tagName === 'A' && target.dataset.subcategory) { e.preventDefault(); showDetailView(target.dataset.category, target.dataset.subcategory); }
         });
 
-        // Event listener for the detail view's content area (for copy buttons)
         promptDisplayArea.addEventListener('click', (e) => {
-            if (e.target.classList.contains('create-gem-btn')) {
-                const content = e.target.dataset.promptContent;
-                showGemModal(content);
-                return;
-            }
+            if (e.target.classList.contains('create-gem-btn')) { const content = e.target.dataset.promptContent; showGemModal(content); return; }
             handleCopyClick(e);
         });
 
-
-        // Event listener for the detail view's quick links
         quickLinksSidebar.addEventListener('click', (e) => {
             if (e.target.tagName === 'A' && e.target.dataset.subcategory) {
                 e.preventDefault();
                 const category = e.target.dataset.category;
                 const subCategory = e.target.dataset.subcategory;
-                renderDetailView(category, subCategory); // Re-render the view
+                renderDetailView(category, subCategory);
             }
         });
 
-        // Event listener for the "Back" button
         backToHomeBtn.addEventListener('click', showHomepage);
-
         closeGemModalBtn.addEventListener('click', hideGemModal);
 
         generateGemBtn.addEventListener('click', () => {
@@ -790,12 +730,8 @@
             let gemString = `Persona: – “${persona}”\n\n`;
             gemString += `Task: – “${task}”\n\n`;
             gemString += `Context: – “${context}”\n\n`;
-            if (audience) {
-                gemString += `Audience (optional): – “${audience}”\n\n`;
-            }
-            if (tone) {
-                gemString += `Tone & Style (optional): – “${tone}”\n\n`;
-            }
+            if (audience) gemString += `Audience (optional): – “${audience}”\n\n`;
+            if (tone) gemString += `Tone & Style (optional): – “${tone}”\n\n`;
             gemString += `Format: – “${format}”`;
 
             generatedGemTextarea.value = gemString;
@@ -805,12 +741,8 @@
         copyGemBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(generatedGemTextarea.value).then(() => {
                 copyGemBtn.textContent = 'Copied!';
-                setTimeout(() => {
-                    copyGemBtn.textContent = 'Copy Gem';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy text: ', err);
-            });
+                setTimeout(() => { copyGemBtn.textContent = 'Copy Gem'; }, 2000);
+            }).catch(err => { console.error('Failed to copy text: ', err); });
         });
 
         // --- INITIAL LOAD ---
@@ -819,25 +751,21 @@
         });
 
     </script>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('quick-links-search');
-    // grab the <nav> itself
     const nav = document.getElementById('quick-links-sidebar');
-
-    searchInput.addEventListener('input', () => {
-      const term = searchInput.value.trim().toLowerCase();
-
-      // pick up every link (or change selector if you have list-items)
-      const items = Array.from(nav.querySelectorAll('a'));
-
-      items.forEach(a => {
-        const text = a.textContent.toLowerCase();
-        a.style.display = text.includes(term) ? '' : 'none';
+    if (searchInput && nav) {
+      searchInput.addEventListener('input', () => {
+        const term = searchInput.value.trim().toLowerCase();
+        const items = Array.from(nav.querySelectorAll('a'));
+        items.forEach(a => { const text = a.textContent.toLowerCase(); a.style.display = text.includes(term) ? '' : 'none'; });
       });
-    });
+    }
   });
 </script>
+
     <!-- =========== Gem Configuration Modal =========== -->
     <div id="gem-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
         <div class="relative top-20 mx-auto p-5 border w-1/2 shadow-lg rounded-md bg-white">
