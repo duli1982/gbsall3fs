@@ -243,22 +243,71 @@
         /**
          * Flattens the prompt data into a single array for easier searching.
          */
-        function flattenPrompts() {
-            allPrompts = [];
-            for (const categoryName in promptData) {
-                const category = promptData[categoryName];
-                for (const subCategoryName in category) {
-                    const prompts = category[subCategoryName];
-                    prompts.forEach(prompt => {
-                        allPrompts.push({
-                            ...prompt,
-                            category: categoryName,
-                            subcategory: subCategoryName
-                        });
-                    });
-                }
-            }
+        // --- UTILITIES ---
+    function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    function highlightText(text, searchTerm) {
+      if (!searchTerm) return text;
+      const regex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
+      return text.replace(regex, '<mark class="bg-yellow-200">$1</mark>');
+    }
+
+    function createDifficultyBadge(difficulty) {
+      if (!difficulty) return '';
+      const map = {
+        beginner: { label: 'Beginner', class: 'difficulty-beginner' },
+        intermediate: { label: 'Intermediate', class: 'difficulty-intermediate' },
+        advanced: { label: 'Advanced', class: 'difficulty-advanced' },
+      };
+      const cfg = map[difficulty] || map.beginner;
+      return `<span class="difficulty-badge ${cfg.class}">${cfg.label}</span>`;
+    }
+    function createTimeBadge(estimatedTime) {
+      if (!estimatedTime) return '';
+      return `<span class="time-badge">${estimatedTime}</span>`;
+    }
+    function createQuickStartSection(quickStart) {
+      if (!quickStart || !quickStart.steps || quickStart.steps.length === 0) return '';
+      const stepsHTML = quickStart.steps.map(step => `<li>${step}</li>`).join('');
+      const tipsHTML = quickStart.tips && quickStart.tips.length
+        ? `<div class="quick-start-tips"><h4>Pro Tips</h4><ul>${quickStart.tips.map(t => `<li>${t}</li>`).join('')}</ul></div>`
+        : '';
+
+      // Choose the skin:
+      // - 'plain'  => transparent, matches page background (default)
+      // - 'white'  => solid white card
+      // If you add "skin" to your JSON (quickStart.skin), it will override this default.
+      const skin = (quickStart.skin === 'white' || quickStart.skin === 'plain') ? quickStart.skin : 'plain';
+
+      return `
+        <div class="quick-start-section ${skin}">
+          <div class="quick-start-content">
+            <div class="quick-start-title">Quick Start Guide</div>
+            <ol class="quick-start-steps">${stepsHTML}</ol>
+            ${tipsHTML}
+          </div>
+        </div>
+      `;
+    }
+    function createExpectedOutputSection(expectedOutput) {
+      if (!expectedOutput) return '';
+      return `<div class="expected-output">
+        <div class="expected-output-title">What to Expect</div>
+        <div class="expected-output-content">${expectedOutput}</div>
+      </div>`;
+    }
+
+    function flattenPrompts() {
+      allPrompts = [];
+      for (const categoryName in promptData) {
+        const category = promptData[categoryName];
+        for (const subCategoryName in category) {
+          const prompts = category[subCategoryName];
+          prompts.forEach(prompt => {
+            allPrompts.push({ ...prompt, category: categoryName, subcategory: subCategoryName });
+          });
         }
+      }
+    }
 
         async function loadPrompts() {
             const loadingIndicator = document.getElementById('loading-indicator');
