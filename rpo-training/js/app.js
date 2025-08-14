@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let menuHtml = `
             <div class="content-section">
-                <button onclick="navigateTo('main-page')" class="mb-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <button onclick="navigateTo('main-page')" class="btn btn-primary" style="margin-bottom: 1rem;">
                     &larr; Back to All Modules
                 </button>
                 <h2 class="google-sans text-3xl font-bold text-gray-800">${moduleTitles[moduleId]}</h2>
@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (backButton) {
                         backButton.innerHTML = '&larr; Back to Module Sessions';
                         backButton.onclick = () => navigateTo(parentModuleId);
+                        backButton.className = 'btn btn-secondary';
                     }
                 })
                 .catch(error => {
