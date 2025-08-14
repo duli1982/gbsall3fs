@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let menuHtml = `
             <div class="content-section">
-                <button onclick="navigateTo('main-page')" class="mb-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <button onclick="navigateTo('main-page')" class="btn btn-primary" style="margin-bottom: 1rem;">
                     &larr; Back to All Modules
                 </button>
                 <h2 class="google-sans text-3xl font-bold text-gray-800">${moduleTitles[moduleId]}</h2>
@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function navigateTo(pageId) {
-        if (pageId !== 'main-page') {
+        // Only save scroll position when leaving the main page
+        if (mainPage.classList.contains('active') && pageId !== 'main-page') {
             sessionStorage.setItem('scrollPosition', window.scrollY);
         }
 
@@ -83,12 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionContainer.innerHTML = '';
             const savedPosition = sessionStorage.getItem('scrollPosition');
             if (savedPosition) {
-                window.scrollTo(0, parseInt(savedPosition, 10));
+                window.scrollTo({ top: parseInt(savedPosition, 10), behavior: 'smooth' });
                 sessionStorage.removeItem('scrollPosition');
             }
         } else if (pageId.startsWith('module-')) {
             showSessionMenu(pageId);
-        } else {
+        } else if (pageId.startsWith('session-')) {
+            const moduleNum = pageId.split('-')[1];
+            const parentModuleId = `module-${moduleNum}`;
+
             const sessionPath = pageId.replace('session-', '').replace('-page', '');
             const filePath = `sessions/${sessionPath}.html`;
 
@@ -104,8 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     sessionContainer.classList.add('active');
                     // Re-attach event listeners for any new buttons in the loaded content if necessary
                     const backButton = sessionContainer.querySelector('button');
-                    if(backButton) {
-                        backButton.onclick = () => navigateTo('main-page');
+                    if (backButton) {
+                        backButton.innerHTML = '&larr; Back to Module Sessions';
+                        backButton.onclick = () => navigateTo(parentModuleId);
+                        backButton.className = 'btn btn-secondary';
                     }
                 })
                 .catch(error => {
