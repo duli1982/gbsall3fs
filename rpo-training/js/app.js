@@ -88,7 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (pageId.startsWith('module-')) {
             showSessionMenu(pageId);
-        } else {
+        } else if (pageId.startsWith('session-')) {
+            const moduleNum = pageId.split('-')[1];
+            const parentModuleId = `module-${moduleNum}`;
+
             const sessionPath = pageId.replace('session-', '').replace('-page', '');
             const filePath = `sessions/${sessionPath}.html`;
 
@@ -104,8 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     sessionContainer.classList.add('active');
                     // Re-attach event listeners for any new buttons in the loaded content if necessary
                     const backButton = sessionContainer.querySelector('button');
-                    if(backButton) {
-                        backButton.onclick = () => navigateTo('main-page');
+                    if (backButton) {
+                        backButton.innerHTML = '&larr; Back to Module Sessions';
+                        backButton.onclick = () => navigateTo(parentModuleId);
                     }
                 })
                 .catch(error => {
