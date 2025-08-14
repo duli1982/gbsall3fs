@@ -25,15 +25,15 @@
     <details class="bg-gray-50 border rounded-lg cursor-pointer mt-6">
       <summary class="google-sans p-4 font-medium">View the "Boolean Builder" Prompt Example (C.R.E.A.T.E.)</summary>
       <div class="p-4 border-t prompt-box">
-        <strong>[CHARACTER]</strong> You are an expert tech sourcer with deep knowledge of LinkedIn Recruiter's search syntax.<br><br>
+        <strong>[CHARACTER]</strong> You are an expert tech sourcer with deep knowledge of LinkedIn Recruiter's search syntax.<br>
 
-        <strong>[REQUEST]</strong> I need a comprehensive search string to find a "Senior Software Engineer" who uses Python, AWS, and database technologies in the Budapest area.<br><br>
+        <strong>[REQUEST]</strong> I need a comprehensive search string to find a "Senior Software Engineer" who uses Python, AWS, and database technologies in the Budapest area.<br>
 
-        <strong>[EXAMPLES]</strong> First provide a brainstorm list of 15 alternative job titles and 20 related technical skills (example format: "Title — short note"). Then show how those terms map into boolean groups.<br><br>
+        <strong>[EXAMPLES]</strong> First provide a brainstorm list of 15 alternative job titles and 20 related technical skills (example format: "Title — short note"). Then show how those terms map into boolean groups.<br>
 
-        <strong>[ADDITIONS]</strong> Prioritize seniority, exclude junior roles, include location filters for Budapest, and prefer profiles that list "AWS" and "Postgres" explicitly.<br><br>
+        <strong>[ADDITIONS]</strong> Prioritize seniority, exclude junior roles, include location filters for Budapest, and prefer profiles that list "AWS" and "Postgres" explicitly.<br>
 
-        <strong>[TYPE]</strong> Output: 1) Brainstorm lists, 2) Grouped boolean term sets, 3) Final LinkedIn-optimized Boolean string in a code block.<br><br>
+        <strong>[TYPE]</strong> Output: 1) Brainstorm lists, 2) Grouped boolean term sets, 3) Final LinkedIn-optimized Boolean string in a code block.<br>
 
         <strong>[EXTRAS]</strong> Keep the boolean string compatible with LinkedIn Recruiter; include comments explaining each group; avoid overly long OR lists that reduce precision.
       </div>
@@ -70,17 +70,17 @@
     <details class="bg-gray-50 border rounded-lg cursor-pointer mt-6">
       <summary class="google-sans p-4 font-medium">View the CV Summarization Prompt Example (C.R.E.A.T.E.)</summary>
       <div class="p-4 border-t prompt-box">
-        <strong>[CHARACTER]</strong> You are a senior RPO recruiter tasked with quickly screening candidates against a job description.<br><br>
+        <strong>[CHARACTER]</strong> You are a senior RPO recruiter tasked with quickly screening candidates against a job description.<br>
 
-        <strong>[REQUEST]</strong> Read the CV and the Job Description provided below and produce an objective match analysis.<br><br>
+        <strong>[REQUEST]</strong> Read the CV and the Job Description provided below and produce an objective match analysis.<br>
 
-        <strong>[EXAMPLES]</strong> Provide a sample row for the table as an example: Key Requirement — Evidence from CV — Match Level (High/Medium/Low).<br><br>
+        <strong>[EXAMPLES]</strong> Provide a sample row for the table as an example: Key Requirement — Evidence from CV — Match Level (High/Medium/Low).<br>
 
-        <strong>[ADDITIONS]</strong> Focus on the five listed key requirements; highlight missing or strong evidence items; ignore irrelevant experience older than 10 years unless directly applicable.<br><br>
+        <strong>[ADDITIONS]</strong> Focus on the five listed key requirements; highlight missing or strong evidence items; ignore irrelevant experience older than 10 years unless directly applicable.<br>
 
-        <strong>[TYPE]</strong> Output: ONLY a table with columns "Key Requirement", "Evidence from CV", "Match Level (High/Medium/Low)".<br><br>
+        <strong>[TYPE]</strong> Output: ONLY a table with columns "Key Requirement", "Evidence from CV", "Match Level (High/Medium/Low)".<br>
 
-        <strong>[EXTRAS]</strong> Keep results concise; do not add commentary outside the table; flag any severe gaps with "Low (critical)".<br><br>
+        <strong>[EXTRAS]</strong> Keep results concise; do not add commentary outside the table; flag any severe gaps with "Low (critical)".<br>
 
         ---<br>
         [PASTE JOB DESCRIPTION HERE]<br>
