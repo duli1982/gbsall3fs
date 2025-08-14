@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function navigateTo(pageId) {
-        if (pageId !== 'main-page') {
+        // Only save scroll position when leaving the main page
+        if (mainPage.classList.contains('active') && pageId !== 'main-page') {
             sessionStorage.setItem('scrollPosition', window.scrollY);
         }
 
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionContainer.innerHTML = '';
             const savedPosition = sessionStorage.getItem('scrollPosition');
             if (savedPosition) {
-                window.scrollTo(0, parseInt(savedPosition, 10));
+                window.scrollTo({ top: parseInt(savedPosition, 10), behavior: 'smooth' });
                 sessionStorage.removeItem('scrollPosition');
             }
         } else if (pageId.startsWith('module-')) {
