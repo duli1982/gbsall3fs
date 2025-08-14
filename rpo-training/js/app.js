@@ -4,6 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerTitle = document.getElementById('header-title');
     const copyrightYear = document.getElementById('copyright-year');
 
+    const moduleTitles = {
+        'module-1': 'Module 1: Prompting & Writing — The C.R.E.A.T.E. Framework',
+        'module-2': 'Module 2: Sourcing & Research',
+        'module-3': 'Module 3: Data & Knowledge',
+        'module-4': 'Module 4: Automation',
+        'module-5': 'Module 5: Train the Trainer',
+        'module-6': 'Module 6: Strategy & Governance',
+        'module-7': 'Module 7: Measuring Impact'
+    };
+
     const pageTitles = {
         'main-page': 'RPO AI Acceleration Program',
         'session-1-1-page': 'Session 1.1: Prompt Engineering 101',
@@ -20,6 +30,44 @@ document.addEventListener('DOMContentLoaded', () => {
         'session-6-1-page': 'Session 6.1: Developing an AI Roadmap',
         'session-7-1-page': 'Session 7.1: The ROI of AI in Recruiting'
     };
+
+    function showSessionMenu(moduleId) {
+        const moduleNum = moduleId.split('-')[1];
+        const sessions = Object.keys(pageTitles)
+            .filter(key => key.startsWith(`session-${moduleNum}-`))
+            .map(key => ({
+                id: key,
+                title: pageTitles[key]
+            }));
+
+        let menuHtml = `
+            <div class="content-section">
+                <button onclick="navigateTo('main-page')" class="mb-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    &larr; Back to All Modules
+                </button>
+                <h2 class="google-sans text-3xl font-bold text-gray-800">${moduleTitles[moduleId]}</h2>
+                <p class="mt-2 text-lg text-gray-600">Select a session to begin.</p>
+                <ul class="mt-6 space-y-4">
+        `;
+
+        sessions.forEach(session => {
+            menuHtml += `
+                <li>
+                    <a href="#" onclick="event.preventDefault(); navigateTo('${session.id}')" class="block bg-white p-6 rounded-lg shadow-md hover:bg-gray-50 transition">
+                        <h3 class="google-sans text-xl font-bold text-blue-700">${session.title}</h3>
+                    </a>
+                </li>
+            `;
+        });
+
+        menuHtml += '</ul></div>';
+
+        sessionContainer.innerHTML = menuHtml;
+        sessionContainer.classList.add('active');
+        mainPage.classList.remove('active');
+        headerTitle.textContent = moduleTitles[moduleId] || 'Select a Session';
+        window.scrollTo(0, 0);
+    }
 
     function navigateTo(pageId) {
         if (pageId !== 'main-page') {
@@ -38,6 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.scrollTo(0, parseInt(savedPosition, 10));
                 sessionStorage.removeItem('scrollPosition');
             }
+        } else if (pageId.startsWith('module-')) {
+            showSessionMenu(pageId);
         } else {
             const sessionPath = pageId.replace('session-', '').replace('-page', '');
             const filePath = `sessions/${sessionPath}.html`;
