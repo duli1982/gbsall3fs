@@ -654,6 +654,15 @@
             setTimeout(() => { window.scrollTo(0, lastScrollPosition); }, 0);
         }
 
+        function showAllCategoryView(categoryName) {
+            lastScrollPosition = window.scrollY;
+            renderAllCategoryView(categoryName);
+            homepageView.classList.add('hidden');
+            detailView.classList.remove('hidden');
+            detailView.classList.add('fade-in');
+            window.scrollTo(0, 0);
+        }
+
         function populateGemModal(content) {
             const personaMatch = content.match(/act as an? (.*)/i);
             document.getElementById('gem-persona').value = personaMatch ? `You are a ${personaMatch[1]}` : '';
@@ -698,7 +707,7 @@
             if (target.id === 'clear-search-suggestions-btn') { homepageSearchInput.value = ''; clearSearchBtn.classList.add('hidden'); renderHomepage(); return; }
             if (target.closest('.copy-btn')) { handleCopyClick(e); return; }
             if (target.classList.contains('create-gem-btn')) { const content = target.dataset.promptContent; showGemModal(content); return; }
-            if (target.classList.contains('see-all-btn')) { const categoryName = target.dataset.category; showAllCategoryView(categoryName); }
+            if (target.classList.contains('see-all-btn')) { const categoryName = target.dataset.category; showAllCategoryView(categoryName); return; }
             if (target.tagName === 'A' && target.dataset.subcategory) { e.preventDefault(); showDetailView(target.dataset.category, target.dataset.subcategory); }
         });
 
