@@ -538,7 +538,7 @@
       "id": "framework-tag-1",
       "title": "T-A-G (Task – Action – Goal)",
       "description": "Problem → action the AI should propose → measurable goal. Use for operational fixes with clear success metrics.",
-      "content": "What it is: Describe the problem, specify the action you want the AI to propose or perform, and attach a measurable goal. Template: Task (problem): [problem statement]. Action: [what should AI propose/do]. Goal: [numeric / time target]. GBS examples: MSP Admin_Contractor: Task: timesheet errors causing 2+ day delays. Action: redesign approval flow + reminders. Goal: reduce delays to <1% in 4 weeks. MSP Source & Screen: Task: LinkedIn response rate <10%. Action: new 3-touch cadence. Goal: lift to 18% in 30 days."
+      "content": "What it is: Describe the problem, specify the action you want the AI to propose or perform, and attach a measurable goal. Template: Task (problem): [problem statement]. Action: [what should AI propose/do]. Goal: [numeric / time target]."
     }
   ],
   "B-A-B (Before – After – Bridge)": [
@@ -546,7 +546,7 @@
       "id": "framework-bab-1",
       "title": "B-A-B (Before – After – Bridge)",
       "description": "Story arc for transformation. Describe current state, desired state, and practical steps to get there.",
-      "content": "What it is: Use a narrative arc to show transformation: current state, desired state, and the bridge (steps/tools) to achieve it. Template: Before: [current]. After: [desired]. Bridge: [steps/tools to get there]. GBS examples: MSP Admin_Contractor: Before: vendors submit incomplete onboarding docs. After: 95% Day-1 compliance. Bridge: pre-onboarding checklist + automated reminders. MSP Source & Screen: Before: talent pool small (180). After: 600 warm leads. Bridge: GitHub scraping + hackathon."
+      "content": "What it is: Use a narrative arc to show transformation: current state, desired state, and the bridge (steps/tools) to achieve it. Template: Before: [current]. After: [desired]. Bridge: [steps/tools to get there]."
     }
   ],
   "C-A-R-E (Context – Action – Reference – Effect)": [
@@ -554,7 +554,7 @@
       "id": "framework-care-1",
       "title": "C-A-R-E (Context – Action – Reference – Effect)",
       "description": "Explain why something matters to stakeholders by tying recommended actions to references and business impact.",
-      "content": "What it is: Use when you need to explain why something matters to stakeholders; tie the action to an authoritative reference and business effect. Template: Context: [situation]. Action: [what to do]. Reference: [existing model/example]. Effect: [business outcome]. GBS examples: Compliance: Context: clients ask about EU AI Act. Action: client-facing compliance note. Reference: IBM AI Fairness 360. Effect: stronger renewal conversations. RPO Source & Screen: Context: intake calls lack market insight. Action: deliver market pulse one-pager. Effect: higher intake satisfaction."
+      "content": "What it is: Use when you need to explain why something matters to stakeholders; tie the action to an authoritative reference and business effect. Template: Context: [situation]. Action: [what to do]. Reference: [existing model/example]. Effect: [business outcome]."
     }
   ],
   "R-I-S-E (Role – Input – Steps – Expectation)": [
@@ -562,7 +562,7 @@
       "id": "framework-rise-1",
       "title": "R-I-S-E (Role – Input – Steps – Expectation)",
       "description": "Operational playbook-style: define the role, the input data, stepwise plan, and measurable expectation.",
-      "content": "What it is: Specify the role the AI should play, the inputs it has, the step-by-step actions required, and the expected measurable outcome. Template: Role: [who AI should be]. Input: [files/data]. Steps: [1,2,3]. Expectation: [result]. GBS examples: MSP Admin_Contractor: Role: Contractor Admin Lead. Input: invoice miss log. Steps: triage → automation → SOP. Expectation: zero missed invoices next quarter."
+      "content": "What it is: Specify the role the AI should play, the inputs it has, the step-by-step actions required, and the expected measurable outcome. Template: Role: [who AI should be]. Input: [files/data]. Steps: [1,2,3]. Expectation: [result]."
     }
   ],
   "R-A-I-N (Role – Aim – Input – Numeric target – Format)": [
@@ -570,7 +570,7 @@
       "id": "framework-rain-1",
       "title": "R-A-I-N (Role – Aim – Input – Numeric target – Format)",
       "description": "Role-based ask with numeric KPIs. Use when you need deliverables tied to clear metrics.",
-      "content": "What it is: Add numeric targets to role-based asks so outputs include KPIs. Template: ROLE: [role]. AIM: [goal]. INPUT: [data]. NUMERIC TARGET: [metric]. FORMAT: [deliverable]. GBS examples: MSP Admin_Contractor: ROLE: Process Optimizer. AIM: reduce timesheet errors. INPUT: audit log + SOP v3.2. NUMERIC TARGET: 90% error-free in 4 weeks. FORMAT: Excel checklist + email templates."
+      "content": "What it is: Add numeric targets to role-based asks so outputs include KPIs. Template: ROLE: [role]. AIM: [goal]. INPUT: [data]. NUMERIC TARGET: [metric]. FORMAT: [deliverable]."
     }
   ],
   "C-L-A-R (Context – Limits – Action – Result)": [
@@ -578,7 +578,7 @@
       "id": "framework-clar-1",
       "title": "C-L-A-R (Context – Limits – Action – Result)",
       "description": "Short, constraint-aware brief. Great for scoped operational or compliance tasks where limits must be explicit.",
-      "content": "What it is: A concise brief that explicitly lists constraints and desired outcome. Template: CONTEXT: [situation]. LIMITS: [constraints]. ACTION: [what to do]. RESULT: [deliverable/metric]. GBS examples: MSP Source & Screen: Context: CV rejections for clinical roles. Limits: Belgium only. Action: screening rules update. Result: 90% first-pass fit. Compliance: Context: new privacy rules. Limits: AI candidate tools only. Action: vendor gap analysis. Result: slide roadmap."
+      "content": "What it is: A concise brief that explicitly lists constraints and desired outcome. Template: CONTEXT: [situation]. LIMITS: [constraints]. ACTION: [what to do]. RESULT: [deliverable/metric]."
     }
   ],
   "F-L-O-W (Function – Level – Output – Win metric)": [
@@ -586,7 +586,7 @@
       "id": "framework-flow-1",
       "title": "F-L-O-W (Function – Level – Output – Win metric)",
       "description": "Audience-centric content brief for comms, learning modules, and content production. Focus on audience level and success metric.",
-      "content": "What it is: Use for briefs that must be tailored to an audience and measured by a win metric. Template: FUNCTION: [role]. LEVEL: [audience level]. OUTPUT: [format/length]. WIN METRIC: [how success is measured]. GBS examples: MSP Source & Screen: Function: sourcing trainer. Level: mid-senior sourcers. Output: Boolean library. Win: time-to-CV ≤3 days. RPO Admin: Function: coordinator. Level: entry-level admins. Output: interview checklist. Win: 98% on-time starts."
+      "content": "What it is: Use for briefs that must be tailored to an audience and measured by a win metric. Template: FUNCTION: [role]. LEVEL: [audience level]. OUTPUT: [format/length]. WIN METRIC: [how success is measured]."
     }
   ],
   "P-I-V-O (Problem – Insights – Voice – Outcome)": [
@@ -594,7 +594,7 @@
       "id": "framework-pivo-1",
       "title": "P-I-V-O (Problem – Insights – Voice – Outcome)",
       "description": "Reframe issues plus the narrative voice. Use when you want diagnosis and recommendations delivered in a specific tone.",
-      "content": "What it is: Diagnose the problem, surface key insights, set the narrative voice, and request the expected outcome. Template: PROBLEM: [issue]. INSIGHTS: [key data points]. VOICE: [tone/persona]. OUTCOME: [deliverable]. GBS examples: MSP Source & Screen: Problem: low responses. Insights: generic messages. Voice: market-savvy sourcer. Outcome: 3 personalized sequences. RPO Source & Screen: Problem: low passive engagement. Insights: no storytelling. Voice: EVP strategist. Outcome: storytelling nurture flow."
+      "content": "What it is: Diagnose the problem, surface key insights, set the narrative voice, and request the expected outcome. Template: PROBLEM: [issue]. INSIGHTS: [key data points]. VOICE: [tone/persona]. OUTCOME: [deliverable]."
     }
   ],
   "S-E-E-D (Situation – Endgoal – Examples – Deliverables)": [
@@ -602,7 +602,7 @@
       "id": "framework-seed-1",
       "title": "S-E-E-D (Situation – Endgoal – Examples – Deliverables)",
       "description": "Build systems and playbooks. Use when you want concrete toolkits with examples and final artifacts.",
-      "content": "What it is: Use to request a toolkit/playbook that includes examples and final deliverables. Template: Act as a [ROLE]. We're facing [SITUATION]. The ENDGOAL is [ENDGOAL]. Include EXAMPLES such as [list]. Deliver the following DELIVERABLES: [list]. GBS examples: MSP Admin_Contractor: Situation: managers delay timesheets. Endgoal: autopilot reminders. Examples: Teams flows, escalation. Deliverables: bot logic + pilot calendar. RPO Admin: Situation: onboarding varies wildly. Endgoal: single source of truth. Examples: checklists, trackers. Deliverables: onboarding playbook (PDF + editable doc)."
+      "content": "What it is: Use to request a toolkit/playbook that includes examples and final deliverables. Template: Act as a [ROLE]. We're facing [SITUATION]. The ENDGOAL is [ENDGOAL]. Include EXAMPLES such as [list]. Deliver the following DELIVERABLES: [list]."
     }
 ]
 },
