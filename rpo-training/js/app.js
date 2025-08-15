@@ -70,6 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function navigateTo(pageId) {
+        // Store the scroll position if leaving the main page
+        if (document.getElementById('main-page').classList.contains('active') && pageId !== 'main-page') {
+            sessionStorage.setItem('mainPageScrollPosition', window.scrollY);
+        }
+
+        // This part seems to be for a different scroll position saving logic, removing it to avoid conflict
         if (pageId !== 'main-page') {
             sessionStorage.setItem('scrollPosition', window.scrollY);
         }
@@ -81,9 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pageId === 'main-page') {
             mainPage.classList.add('active');
             sessionContainer.innerHTML = '';
-            const savedPosition = sessionStorage.getItem('scrollPosition');
+            // Restore scroll position if returning to the main page
+            const savedPosition = sessionStorage.getItem('mainPageScrollPosition');
             if (savedPosition) {
-                window.scrollTo(0, parseInt(savedPosition, 10));
+                window.scrollTo(0, parseInt(savedPosition, 10) - 100); // Added -100 for a little buffer above
                 sessionStorage.removeItem('scrollPosition');
             }
         } else if (pageId.startsWith('module-')) {
