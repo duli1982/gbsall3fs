@@ -531,13 +531,15 @@
     "title": "P-T-F (Prompt – Task – Format)",
     "description": "Direct, action-first template: define the role, the exact task, and the output format. Best for concrete deliverables (templates, docs, tables).",
     "content": "What it is: Say who the AI should be, what exact task to do, and what format you want the output in.\nTemplate: Prompt: Act as a [ROLE]. Task: [WHAT to do]. Format: [OUTPUT format].\nGBS examples:\n• MSP Admin_Contractor: Act as a Workforce Admin Coordinator. Task: build a Google Sheet timesheet template with validation + escalation tab. Format: Google Sheet.\n• Compliance: Act as a Compliance Analyst. Task: summarize GDPR 2025 changes for candidate data. Format: 1-page PDF + risk matrix.\n• MSP Source & Screen: Act as a Sourcing Specialist. Task: produce 5 Boolean strings for clinical research roles. Format: Excel sheet."
-  },
+  }
+  ],
   {
     "id": "framework-tag",
     "title": "T-A-G (Task – Action – Goal)",
     "description": "Problem → action the AI should propose → measurable goal. Use for operational fixes with a clear success metric.",
     "content": "Template: Task (problem): [problem statement]. Action: [what should AI propose/do]. Goal: [numeric / time target].\nGBS examples:\n• MSP Admin_Contractor: Task: timesheet errors causing 2+ day delays. Action: redesign approval flow + reminders. Goal: reduce delays to <1% in 4 weeks.\n• MSP Source & Screen: Task: LinkedIn response rate <10%. Action: new 3-touch cadence. Goal: lift to 18% in 30 days."
-  },
+  }
+  ],
   {
     "id": "framework-bab",
     "title": "B-A-B (Before – After – Bridge)",
