@@ -524,7 +524,73 @@
 
 
 
-"Candidate Engagement": {
+"Extra Prompt Frameworks": {
+      "Prompt Frameworks": [
+  {
+    "id": "framework-ptf",
+    "title": "P-T-F (Prompt – Task – Format)",
+    "description": "Direct, action-first template: define the role, the exact task, and the output format. Best for concrete deliverables (templates, docs, tables).",
+    "content": "What it is: Say who the AI should be, what exact task to do, and what format you want the output in.\nTemplate: Prompt: Act as a [ROLE]. Task: [WHAT to do]. Format: [OUTPUT format].\nGBS examples:\n• MSP Admin_Contractor: Act as a Workforce Admin Coordinator. Task: build a Google Sheet timesheet template with validation + escalation tab. Format: Google Sheet.\n• Compliance: Act as a Compliance Analyst. Task: summarize GDPR 2025 changes for candidate data. Format: 1-page PDF + risk matrix.\n• MSP Source & Screen: Act as a Sourcing Specialist. Task: produce 5 Boolean strings for clinical research roles. Format: Excel sheet."
+  },
+  {
+    "id": "framework-tag",
+    "title": "T-A-G (Task – Action – Goal)",
+    "description": "Problem → action the AI should propose → measurable goal. Use for operational fixes with a clear success metric.",
+    "content": "Template: Task (problem): [problem statement]. Action: [what should AI propose/do]. Goal: [numeric / time target].\nGBS examples:\n• MSP Admin_Contractor: Task: timesheet errors causing 2+ day delays. Action: redesign approval flow + reminders. Goal: reduce delays to <1% in 4 weeks.\n• MSP Source & Screen: Task: LinkedIn response rate <10%. Action: new 3-touch cadence. Goal: lift to 18% in 30 days."
+  },
+  {
+    "id": "framework-bab",
+    "title": "B-A-B (Before – After – Bridge)",
+    "description": "Story arc for transformation. Describe current state, desired state, and the practical bridge to get there. Great for change proposals.",
+    "content": "Template: Before: [current]. After: [desired]. Bridge: [steps/tools to get there].\nGBS examples:\n• MSP Admin_Contractor: Before: vendors submit incomplete onboarding docs. After: 95% Day-1 compliance. Bridge: pre-onboarding checklist + automated reminders.\n• MSP Source & Screen: Before: talent pool small (180). After: 600 warm leads. Bridge: GitHub scraping + hackathon."
+  },
+  {
+    "id": "framework-care",
+    "title": "C-A-R-E (Context – Action – Reference – Effect)",
+    "description": "Explain why something matters to stakeholders by connecting action to references and business impact.",
+    "content": "Template: Context: [situation]. Action: [what to do]. Reference: [existing model/example]. Effect: [business outcome].\nGBS examples:\n• Compliance: Context: clients ask about EU AI Act. Action: client-facing compliance note. Reference: IBM AI Fairness 360. Effect: stronger renewal conversations.\n• RPO Source & Screen: Context: intake calls lack market insight. Action: deliver market pulse one-pager. Effect: higher intake satisfaction."
+  },
+  {
+    "id": "framework-rise",
+    "title": "R-I-S-E (Role – Input – Steps – Expectation)",
+    "description": "Operational playbook style — specify the role, the input data, stepwise plan, and the measurable expectation.",
+    "content": "Template: Role: [who AI should be]. Input: [files/data]. Steps: [1,2,3]. Expectation: [result].\nGBS examples:\n• MSP Admin_Contractor: Role: Contractor Admin Lead. Input: invoice miss log. Steps: triage → automation → SOP. Expectation: zero missed invoices next quarter.\n• RPO Source & Screen: Role: Senior Market Mapper. Input: 3 hard roles + historical fill data. Steps: scan → channel match → EVP alignment. Expectation: 20-day fill estimate."
+  },
+  {
+    "id": "framework-rain",
+    "title": "R-A-I-N (Role – Aim – Input – Numeric target – Format)",
+    "description": "Role-based ask with numeric KPIs. Use when you need a deliverable tied to specific metrics.",
+    "content": "Template: ROLE: [role]. AIM: [goal]. INPUT: [data]. NUMERIC TARGET: [metric]. FORMAT: [deliverable].\nGBS examples:\n• MSP Admin_Contractor: ROLE: Process Optimizer. AIM: reduce timesheet errors. INPUT: audit log + SOP v3.2. NUMERIC TARGET: 90% error-free in 4 weeks. FORMAT: Excel checklist + email templates.\n• MSP Source & Screen: ROLE: Sourcing Lead. AIM: increase German profiles. INPUT: Boolean + rejection reasons. NUMERIC TARGET: 3× qualified/week. FORMAT: Boolean library + scorecard."
+  },
+  {
+    "id": "framework-clar",
+    "title": "C-L-A-R (Context – Limits – Action – Result)",
+    "description": "Short, constraint-aware brief useful for scoped operational or compliance tasks where limits must be explicit.",
+    "content": "Template: CONTEXT: [situation]. LIMITS: [constraints]. ACTION: [what to do]. RESULT: [deliverable/metric].\nGBS examples:\n• MSP Source & Screen: Context: CV rejections for clinical roles. Limits: Belgium only. Action: screening rules update. Result: 90% first-pass fit.\n• Compliance: Context: new privacy rules. Limits: AI candidate tools only. Action: vendor gap analysis. Result: slide roadmap."
+  },
+  {
+    "id": "framework-flow",
+    "title": "F-L-O-W (Function – Level – Output – Win metric)",
+    "description": "Audience-centric content brief for comms, learning modules, and content production. Focus on audience level and success metric.",
+    "content": "Template: FUNCTION: [role]. LEVEL: [audience level]. OUTPUT: [format/length]. WIN METRIC: [how success is measured].\nGBS examples:\n• MSP Source & Screen: Function: sourcing trainer. Level: mid-senior sourcers. Output: Boolean library. Win: time-to-CV ≤3 days.\n• RPO Admin: Function: coordinator. Level: entry-level admins. Output: interview checklist. Win: 98% on-time starts."
+  },
+  {
+    "id": "framework-pivo",
+    "title": "P-I-V-O (Problem – Insights – Voice – Outcome)",
+    "description": "Reframe issues plus the narrative voice. Use when you want diagnosis + recommendations delivered in a specific tone.",
+    "content": "Template: PROBLEM: [issue]. INSIGHTS: [key data points]. VOICE: [tone/persona]. OUTCOME: [deliverable].\nGBS examples:\n• MSP Source & Screen: Problem: low responses. Insights: generic messages. Voice: market-savvy sourcer. Outcome: 3 personalized sequences.\n• RPO Source & Screen: Problem: low passive engagement. Insights: no storytelling. Voice: EVP strategist. Outcome: storytelling nurture flow."
+  },
+  {
+    "id": "framework-seed",
+    "title": "S-E-E-D (Situation – Endgoal – Examples – Deliverables)",
+    "description": "Build toolkits and playbooks. Use when you want examples and final artifacts spelled out clearly.",
+    "content": "Template: Act as a [ROLE]. We're facing [SITUATION]. The ENDGOAL is [ENDGOAL]. Include EXAMPLES such as [list]. Deliver the following DELIVERABLES: [list].\nGBS examples:\n• MSP Admin_Contractor: Situation: managers delay timesheets. Endgoal: autopilot reminders. Examples: Teams flows, escalation. Deliverables: bot logic + pilot calendar.\n• RPO Admin: Situation: onboarding varies wildly. Endgoal: single source of truth. Examples: checklists, trackers. Deliverables: onboarding playbook (PDF + editable doc)."
+  }
+]
+},
+
+
+    "Candidate Engagement": {
       "Personalized Outreach": [
         {
           "id": "candidate-engagement-1",
