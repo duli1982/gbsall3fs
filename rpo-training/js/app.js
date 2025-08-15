@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(filePath)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Network response was not ok');
+                        throw new Error(`Network response was not ok: ${response.status}`);
                     }
                     return response.text();
                 })
@@ -104,8 +104,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     sessionContainer.classList.add('active');
                     // Re-attach event listeners for any new buttons in the loaded content if necessary
                     const backButton = sessionContainer.querySelector('button');
+                    // Store the current module ID before navigating to a session
+                    const currentModuleId = sessionStorage.getItem('currentModuleId');
+                    if (currentModuleId) {
+                         sessionStorage.setItem('lastVisitedModule', currentModuleId);
+                    }
+                   
                     if(backButton) {
-                        backButton.onclick = () => navigateTo('main-page');
+ backButton.onclick = () => {
+ const lastModule = sessionStorage.getItem('lastVisitedModule');
+                            if (lastModule) {
+ navigateTo(lastModule);
+                                sessionStorage.removeItem('lastVisitedModule'); // Clear after use
+                            } else {
+ navigateTo('main-page');
+                            }
+                        };
                     }
                 })
                 .catch(error => {
@@ -119,6 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pageId !== 'main-page') {
             window.scrollTo(0, 0);
         }
+
+        // Store the current module ID when navigating to a module session menu
+        if (pageId.startsWith('module-')) {
+            sessionStorage.setItem('currentModuleId', pageId);
+        }
+
     }
 
     // Make navigateTo globally accessible
