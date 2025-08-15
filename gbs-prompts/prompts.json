@@ -530,7 +530,7 @@
       "id": "framework-ptf-1",
       "title": "P-T-F (Prompt – Task – Format)",
       "description": "Direct, action-first template. Define the role, the exact task, and the output format. Best for concrete deliverables (templates, docs, tables).",
-      "content": "What it is: A direct, action-first template — say who the AI should be, what exact task to do, and what format you want the output in. Template: Prompt: Act as a [ROLE]. Task: [WHAT to do]. Format: [OUTPUT format]. GBS examples: MSP Admin_Contractor: Act as a Workforce Admin Coordinator. Task: build a Google Sheet timesheet template with validation + escalation tab. Format: Google Sheet. Compliance: Act as a Compliance Analyst. Task: summarize GDPR 2025 changes for candidate data. Format: 1-page PDF + risk matrix."
+      "content": "What it is: A direct, action-first template — say who the AI should be, what exact task to do, and what format you want the output in. Template: Prompt: Act as a [ROLE]. Task: [WHAT to do]. Format: [OUTPUT format]."
     }
   ],
   "T-A-G (Task – Action – Goal)": [
