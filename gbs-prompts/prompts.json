@@ -528,8 +528,8 @@
     {
       "id": "framework-ptf-1",
       "title": "P-T-F (Prompt – Task – Format)",
-      "description": "Direct, action-first template. Define the role, the exact task, and the output format. Best for concrete deliverables (templates, docs, tables).",
-      "content": "What it is: A direct, action-first template — say who the AI should be, what exact task to do, and what format you want the output in. Template: Prompt: Act as a [ROLE]. Task: [WHAT to do]. Format: [OUTPUT format]."
+      "description": "Direct, action-first template. Define the role, the exact task, and the output format. Best for concrete deliverables (templates, docs, tables). What it is: A direct, action-first template — say who the AI should be, what exact task to do, and what format you want the output in.",
+      "content": "Act as a [ROLE]. Task: [WHAT to do]. Format: [OUTPUT format]."
     }
   ],
   "T-A-G (Task – Action – Goal)": [
